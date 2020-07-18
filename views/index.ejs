@@ -1,0 +1,50 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+
+<div class="jumbotron" style="background-color: #f3d2c1; margin-bottom: 50px;">
+    <div class="container">
+        <h1 class="display-4">Welcome to the AIFSC Home</h1>
+        <p class="lead">DEDICATED TO ALL CENTRAL EXCISE, SERVICE TAX AND CUSTOMS GAZETTED EXECUTIVE OFFICERS</p>
+        <hr class="my-4" />
+        <p>*ALL INDIA ASSOCIATION OF CENTRAL EXCISE GAZETTED EXECUTIVE OFFICERS(AIACEGEO)(Recognised vide CBEC
+            letter
+            F.No. B. 12017/10/2012-Ad.IV A Dt. 25.02.13 ) (Disclaimer- The views expressed in the Blog post are
+            purely for the consumption of members of AIACEGEO only and the data/facts contained therein should be
+            first verified with authentic source, before using the same, by anyone).</p>
+    </div>
+</div>
+
+<div class="">
+    <h2>Latest Blogs</h2>
+    <div class="blog-container">
+        <% blogs.forEach(blog => { %>
+            <!-- <div class="blog-card p-3 my-4">
+                <h2 style="color: #172c66;"><%= blog.title %></h2>
+                <hr>
+                <div class="blog-meta">
+                    <p><%= blog.createdAt %></p>
+                    <p>Posted by Anil Kumar</p>
+                </div>
+                <div class="blog-body"><%- blog.body %></div>
+            </div> -->
+            <div class="card blog-card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.title %></h5>
+                  <hr>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= blog.createdAt %></h6>
+                  <p class="card-text"><%- blog.body %></p>
+                  <a href="/blog/<%= blog._id %>"><button>Read More</button></a>
+                </div>
+              </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %>
+
+<!-- 
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+
+<%- include('partials/footer.ejs') %> -->
