@@ -7,12 +7,11 @@ const helpers = require('../helper')
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const blogs = await Blog.find().lean()
+    const blogs = await Blog.find().sort({createdAt: "desc"}).lean()
     blogs.forEach(blog=>{
         blog.createdAt = moment(blog.createdAt).format("MMMM Do YYYY")
         blog.body = helpers.truncate(blog.body, 100)
     })
-    console.log(blogs)
     res.render('index', { blogs })
 })
 
