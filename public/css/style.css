@@ -5,8 +5,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fdfbfb;
+  background-color: #ececec;
   color: #333;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
 }
 
 .form-holder {
@@ -17,7 +21,7 @@ body {
   margin: 0;
 }
 .form-container {
-  background-color: #fef6e4;
+  background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 400px;
@@ -75,9 +79,9 @@ button {
 
 .blog-card {
   border-radius: 20px;
-  width: 435px;
-  margin: 10px 15px;
-  background-color: #ececec;
+  width: 420px;
+  margin: 30px 15px;
+  background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -95,7 +99,7 @@ button {
   margin: 0 13%;
   display: flex;
   flex-flow: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }
 
 .aifsc-logo {
@@ -106,6 +110,4 @@ button {
   width: 50px;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-}
+
