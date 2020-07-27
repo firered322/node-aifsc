@@ -29,11 +29,8 @@ router.get('/blog/:id', async (req, res) => {
     res.render('blog_view', {blog})
 })
 
-
 router.post('/blog', async (req, res) => {
     try {
-        // req.body.user = 'dummyuserid999666111';
-        console.log(req.body)
         const blog = await Blog.create(req.body);
         res.redirect("/");
     } catch (err) {

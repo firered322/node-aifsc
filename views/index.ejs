@@ -1,36 +1,55 @@
-<%- include('partials/head.ejs') %>
-<%- include('partials/header.ejs') %>
+<%- include('partials/head.ejs') %> <%- include('partials/header.ejs') %>
 
-<div class="jumbotron" style="background-color: #f3d2c1; margin-bottom: 50px;">
-    <div class="container">
-        <h1 class="display-4">Welcome to the AIFSC Home</h1>
-        <p class="lead">DEDICATED TO ALL CENTRAL EXCISE, SERVICE TAX AND CUSTOMS GAZETTED EXECUTIVE OFFICERS</p>
-        <hr class="my-4" />
-        <p>*ALL INDIA ASSOCIATION OF CENTRAL EXCISE GAZETTED EXECUTIVE OFFICERS(AIACEGEO)(Recognised vide CBEC
-            letter
-            F.No. B. 12017/10/2012-Ad.IV A Dt. 25.02.13 ) (Disclaimer- The views expressed in the Blog post are
-            purely for the consumption of members of AIACEGEO only and the data/facts contained therein should be
-            first verified with authentic source, before using the same, by anyone).</p>
+<div class="jumbotron" style="background-color: #ececec; margin-bottom: 50px;">
+  <div data-aos="zoom-in" data-aos-duration="1000" class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <img class="aifsc-logo" src="aifsc.png" al5="" />
+      </div>
+      <div class="col-md-10">
+        <h1 class="display-4">
+          Welcome to the All India Federation Of Superintendent Of Customs
+        </h1>
+      </div>
     </div>
+
+    <p class="lead">
+      Recognised by the Government of India vide Ministry's letter F.No.
+      B.12017/15/2001 Ad IV A dt. 29th April 2004.
+    </p>
+    <hr class="my-4" />
+    <p>
+      HEAD OFFICE: 3RD FLOOR, NEW CUSTOM HOUSE, BALLARD ESTATE, MUMBAI, 400001.
+    </p>
+  </div>
 </div>
 
-<div class="">
-    <h2>Latest Blogs</h2>
-    <div class="blog-container">
-        <% blogs.forEach(blog => { %>
-            <div class="card blog-card">
-                <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <hr>
-                  <h6 class="card-subtitle mb-2 text-muted"><%= blog.createdAt %></h6>
-                  <p class="card-text"><%- blog.body %></p>
-                  <a href="/blog/<%= blog._id %>"><button>Read More</button></a>
-                </div>
-              </div>
-        <% }) %>
-    </div>
-</div>
+<div data-aos="fade-up" data-aos-duration="1000">
+  <h2>Latest Blogs</h2>
+  <div class="blog-container">
+    <% blogs.forEach(blog => { %>
+    <div class="card blog-card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="aifsc-card-logo" src="aifsc.png" al5="" />
+          </div>
+          <div class="col-md-10">
+            <h5 class="card-title">
+              <%= blog.title %>
+            </h5>
+          </div>
+        </div>
 
+        <hr />
+        <h6 class="card-subtitle mb-2 text-muted"><%= blog.createdAt %></h6>
+        <p class="card-text"><%- blog.body %></p>
+        <a href="/blog/<%= blog._id %>"><button>Read More</button></a>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
 
 <%- include('partials/footer.ejs') %>
 
