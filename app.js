@@ -1,17 +1,17 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const mongoose = require("mongoose");
 const connectDB = require("./config/db");
-
-const homeRoutes = require('./routes/index')
-
-const app = express();
+const mongoose = require("mongoose");
+const homeRoutes = require("./routes/index");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
-connectDB()
+const app = express();
+
+// connect db
+connectDB();
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
@@ -26,14 +26,14 @@ app.use(express.static(require("path").join(__dirname, "public")));
 
 // Logging
 if (process.env.NODE_ENV === "development") {
-    app.use(morgan("dev"));
+  app.use(morgan("dev"));
 }
 
 // Routes
-app.use('', homeRoutes)
+app.use("", homeRoutes);
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port: ${PORT}`);
+  console.log(`Server running on port: ${PORT}`);
 });
