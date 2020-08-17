@@ -1,22 +1,25 @@
-<%- include('partials/head.ejs') %>
-<%- include('partials/header.ejs') %>
-<div class="form-holder">
+<%- include('partials/head.ejs') %> <%- include('partials/header.ejs') %>
+<div data-aos="fade-up" data-aos-duration="1000">
+  <div class="form-holder">
     <div class="form-container">
-        <form id="form" class="form">
-            <h2>Login</h2>
-            <div class="form-group">
-                <label for="inputEmail">Email address</label>
-                <input type="email" class="form-control" id="inputEmail">
-            </div>
-            <div class="form-group">
-                <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+      <form id="form" class="form">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" />
+        </div>
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </div>
+  </div>
 </div>
 
-<div class="container text-center"><a href="/blog"><button>Write Post</button></a></div>
+<div class="container text-center">
+  <a href="/blog"><button>Write Post</button></a>
+</div>
 
 <%- include('partials/footer.ejs') %>
