@@ -10,28 +10,62 @@ const User = require("../models/User");
 // @route  POST /auth/login
 // @desc   Login user
 // @access Public
-router.post("/login", (req, res) => {
-  const { email, password } = req.body;
+router.post(
+  "/login",
+  [
+    check("email", "Enter your registered Email id").isEmail(),
+    check("password", "Password is required").exists(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        errors: errors.array(),
+      });
+    }
 
-  console.log(email, password);
+    const { email, password } = req.body;
 
-  // const payload = {
-  //   user: {
-  //     id: user.id,
-  //   },
-  // };
-  // jwt.sign(
-  //   payload,
-  //   process.env.JWT_SECRET,
-  //   { expiresIn: 360000 },
-  //   (err, token) => {
-  //     if (err) throw err;
-  //     res.json({ token });
-  //   }
-  // );
+    try {
+      // Checking if a user with the same email already exists
+      let user = await User.findOne({ email });
+      if (!user) {
+        return res.status(400).json({
+          errors: [{ msg: "Invalid credentials." }],
+        });
+      }
 
-  res.json({ email, password });
-});
+      // comparing the passwords
+      const isMatch = await bcrypt.compare(password, user.password);
+
+      if (!isMatch) {
+        return res.status(400).json({
+          errors: [{ msg: "Enter correct password." }],
+        });
+      }
+
+      // jwt auth
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      jwt.sign(
+        payload,
+        config.get("JWT_SECRET"),
+        { expiresIn: 360000 }, // 100 hours
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
+  }
+);
 
 // @route  POST /auth/signup
 // @desc   Sign up user
@@ -92,7 +126,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server err");
+      res.status(500).send("Server error");
     }
   }
 );
