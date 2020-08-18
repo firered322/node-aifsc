@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ececec;
+  font-family: "Rye", cursive;
   color: #333;
 }
 
@@ -15,15 +16,26 @@ body {
   font-size: 1.5rem;
 }
 
+.brand-text {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #434190;
+}
+
+.location-text {
+  color: #434190;
+  font-size: 1.5rem;
+}
+
 .jumbotron {
   padding: 5rem 1rem;
   margin-bottom: 0.5rem;
   background-color: #e9ecef;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 
 .add-hr {
-  margin: 2rem 0
+  margin: 2rem 0;
 }
 
 .logo-container {
@@ -52,6 +64,12 @@ h2 {
 
 .form {
   padding: 30px 40px;
+}
+
+.brand-info-text {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #f56565;
 }
 
 .form button {
@@ -162,10 +180,10 @@ button {
     padding: 2rem 1rem;
     margin-bottom: 0px;
     background-color: #e9ecef;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
   }
   .add-hr {
-    margin: 0
+    margin: 0;
   }
 }
 
@@ -203,9 +221,9 @@ button {
     padding: 2rem 1rem;
     margin-bottom: 0px;
     background-color: #e9ecef;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
   }
   .add-hr {
-    margin: 0
+    margin: 0;
   }
 }
