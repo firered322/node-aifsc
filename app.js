@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const mongoose = require("mongoose");
 const homeRoutes = require("./routes/index");
+const authRoute = require("./routes/auth");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
@@ -31,6 +32,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Routes
 app.use("", homeRoutes);
+app.use("/auth", authRoute  );
 
 const PORT = process.env.PORT || 5000;
 

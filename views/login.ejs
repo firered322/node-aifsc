@@ -2,17 +2,17 @@
 <div data-aos="fade-up" data-aos-duration="1000">
   <div class="form-holder">
     <div class="form-container">
-      <form id="form" class="form">
+      <form method="POST" action="/auth" id="form" class="form">
         <h2>Login</h2>
         <div class="form-group">
           <label for="inputEmail">Email address</label>
-          <input type="email" class="form-control" id="inputEmail" />
+          <input type="email" class="form-control" id="inputEmail" name="email" />
         </div>
         <div class="form-group">
           <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword" />
+          <input type="password" class="form-control" id="inputPassword" name="password" />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button> 
       </form>
     </div>
   </div>
