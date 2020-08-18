@@ -117,7 +117,7 @@ router.post(
       jwt.sign(
         payload,
         process.env.JWT_SECRET,
-        { expiresIn: 360000 }, // 100 hours
+        { expiresIn: 60 * 60 * 2 }, // 2 hours
         (err, token) => {
           if (err) throw err;
           // respond with the token for the new user

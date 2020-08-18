@@ -3,6 +3,7 @@ const moment = require("moment");
 
 const Blog = require("../models/Blog");
 const helpers = require("../helper");
+const authMiddleware = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -18,6 +19,9 @@ router.get("/", async (req, res) => {
   res.render("index", { blogs });
 });
 
+// @route  GET /login
+// @desc   Open the admin login page
+// @access Public
 router.get("/login", (req, res) => {
   res.render("login");
 });
@@ -40,7 +44,7 @@ router.get("/blog/:id", async (req, res) => {
 
 // @route  POST /blog
 // @desc   Create blog post from the blog form
-// @access Public
+// @access Private
 router.post("/blog", async (req, res) => {
   try {
     const blog = await Blog.create(req.body);
