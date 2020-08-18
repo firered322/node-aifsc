@@ -73,7 +73,23 @@ router.post(
 
       await user.save();
 
-      res.json(user);
+      // jwt token generation
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      jwt.sign(
+        payload,
+        process.env.JWT_SECRET,
+        { expiresIn: 360000 }, // 100 hours
+        (err, token) => {
+          if (err) throw err;
+          // respond with the token for the new user
+          res.json({ msg: "User Created", token });
+        }
+      );
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server err");
