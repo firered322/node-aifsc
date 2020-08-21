@@ -17,6 +17,7 @@ const upload = multer({
   //   to check if the uploaded document is a pdf
   fileFilter(req, file, cb) {
     // check file extension
+    //TODO: Save the file.originalname string to the database.
     if (!file.originalname.endsWith(".pdf")) {
       return cb(new Error("Please upload a PDF"));
     }

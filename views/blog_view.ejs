@@ -2,8 +2,8 @@
 <%- include('partials/header.ejs') %>
 <div class="container my-5">
     <h1><%= blog.title %> </h1>
+    <p class="lead"><%= blog.createdAt %></p>
     <hr>
-    <p class="lead"><%= blog.createdAt %> </p>
     <p><%- blog.body %> </p>
 </div>
 <%- include('partials/footer.ejs') %>
