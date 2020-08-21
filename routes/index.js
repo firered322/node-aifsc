@@ -62,9 +62,17 @@ router.get("/blog/:id", async (req, res) => {
 // @route  POST /blog
 // @desc   Create blog post from the blog form
 // @access Private
-router.post("/blog", async (req, res) => {
+router.post("/blog", upload.single('blogfile'), async (req, res) => {
   try {
-    const blog = await Blog.create(req.body);
+    const { title, body } = req.body;
+    const file = req.file;
+    const blogObject = {
+      title: title,
+      body: body,
+      file: file,
+    };
+    console.log(blogObject);
+    // const blog = await Blog.create(blogObject);
     res.redirect("/");
   } catch (err) {
     console.error(err);
