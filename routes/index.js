@@ -1,11 +1,28 @@
 const express = require("express");
 const moment = require("moment");
+const multer = require("multer");
 
 const Blog = require("../models/Blog");
 const helpers = require("../helper");
 const authMiddleware = require("../middleware/auth");
 
 const router = express.Router();
+
+// multer validation middleware
+const upload = multer({
+  dest: "files",
+  limits: {
+    fileSize: 2000000, // 2MB limit
+  },
+  //   to check if the uploaded document is a pdf
+  fileFilter(req, file, cb) {
+    // check file extension
+    if (!file.originalname.endsWith(".pdf")) {
+      return cb(new Error("Please upload a PDF"));
+    }
+    cb(undefined, true);
+  },
+});
 
 // @route  GET /
 // @desc   Homepage
