@@ -98,6 +98,7 @@ button {
 }
 
 .blog-card {
+  min-height: 350px;
   border-radius: 20px;
   width: 30%;
   margin: 30px 15px;

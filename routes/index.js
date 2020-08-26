@@ -32,7 +32,6 @@ router.get("/", async (req, res) => {
   const blogs = await Blog.find().sort({ createdAt: "desc" }).lean();
   blogs.forEach((blog) => {
     blog.createdAt = moment(blog.createdAt).format("MMMM Do YYYY");
-    //TODO: Remove the html tags
     blog.body = blog.body.toString();
     blog.body = blog.body.replace(/<[^>]*>/g, "").replace(/\&nbsp;/g, "");
     blog.body = helpers.truncate(blog.body, 100);
