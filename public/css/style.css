@@ -38,6 +38,11 @@ body {
   margin: 2rem 0;
 }
 
+.carousel-card-holder {
+  display: flex;
+  justify-content: space-around;
+}
+
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -100,7 +105,7 @@ button {
 .blog-card {
   min-height: 350px;
   border-radius: 20px;
-  width: 30%;
+  width: 31%;
   margin: 30px 15px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -133,7 +138,7 @@ button {
 }
 
 .blog-container {
-  margin: 0 18%;
+  margin: 0 10%;
   display: flex;
   flex-flow: wrap;
   justify-content: left;
