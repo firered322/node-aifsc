@@ -81,4 +81,38 @@ router.post("/blog", upload.single("blogfile"), async (req, res) => {
     console.error(err);
   }
 });
+
+// @route  POST /listblogs
+// @desc   Create blog post from the blog form
+// @access Private
+router.get("/listblogs", async (req, res) => {
+  try {
+    const blogs = await Blog.find({});
+    res.render("list-blogs", { blogs });
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+// @route  GET /edit-blog/:id
+// @desc   Open a blog page
+// @access Private
+router.get("/edit-blog/:id", async (req, res) => {
+  const blog = await Blog.findOne({ _id: req.params.id }).lean();
+  res.render("edit-blog", { blog });
+});
+
+// @route  POST /edit-blog/:id
+// @desc   Open a blog page
+// @access Private
+router.post("/edit-blog/:id", async (req, res) => {
+  const { title, body } = req.body;
+  try {
+    await Blog.findByIdAndUpdate({ _id: req.params.id }, { title, body });
+    res.redirect("/");
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 module.exports = router;

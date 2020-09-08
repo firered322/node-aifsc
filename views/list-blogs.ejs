@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+<div class="container my-5">
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date Posted</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% blogs.forEach((blog,id) => { %>
+            <tr>
+                <th scope="row"><%= id+1 %> </th>
+                <td><%= blog.title %></td>
+                <td><%= blog.createdAt %> </td>
+                <td><a href="/edit-blog/<%= blog._id %> ">Edit</a></td>
+              </tr>
+          <% }) %>
+
+        </tbody>
+      </table>
+</div>
+<%- include('partials/footer.ejs') %>
