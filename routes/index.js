@@ -74,8 +74,8 @@ router.post("/blog", upload.single("blogfile"), async (req, res) => {
       body: body,
       file: file,
     };
-    console.log(blogObject);
-    // const blog = await Blog.create(blogObject);
+    // console.log(blogObject);
+    const blog = await Blog.create(blogObject);
     res.redirect("/");
   } catch (err) {
     console.error(err);
