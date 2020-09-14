@@ -2,7 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
-const mongoose = require("mongoose");
 const homeRoutes = require("./routes/index");
 const authRoute = require("./routes/auth");
 
