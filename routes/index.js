@@ -49,7 +49,7 @@ router.get("/login", (req, res) => {
 // @route  GET /blog
 // @desc   Open the add blog page
 // @access Private
-router.get("/blog", (req, res) => {
+router.get("/blog", authMiddleware, (req, res) => {
   res.render("add_blog");
 });
 
@@ -65,17 +65,17 @@ router.get("/blog/:id", async (req, res) => {
 // @route  POST /blog
 // @desc   Create blog post from the blog form
 // @access Private
-router.post("/blog", upload.single("blogfile"), async (req, res) => {
+router.post("/blog", authMiddleware, async (req, res) => {
   try {
     const { title, body } = req.body;
-    const file = req.file;
+    // const file = req.file;
     const blogObject = {
       title: title,
       body: body,
-      file: file,
+      user: req.user.id,
     };
     // console.log(blogObject);
-    const blog = await Blog.create(blogObject);
+    await Blog.create(blogObject);
     res.redirect("/");
   } catch (err) {
     console.error(err);
@@ -83,11 +83,11 @@ router.post("/blog", upload.single("blogfile"), async (req, res) => {
 });
 
 // @route  POST /listblogs
-// @desc   Create blog post from the blog form
+// @desc   List all the blogs
 // @access Private
-router.get("/listblogs", async (req, res) => {
+router.get("/listblogs", authMiddleware, async (req, res) => {
   try {
-    const blogs = await Blog.find({});
+    const blogs = await Blog.find({}).sort({ id: -1 });
     res.render("list-blogs", { blogs });
   } catch (err) {
     console.error(err);
@@ -95,17 +95,17 @@ router.get("/listblogs", async (req, res) => {
 });
 
 // @route  GET /edit-blog/:id
-// @desc   Open a blog page
+// @desc   Open edit blog page
 // @access Private
-router.get("/edit-blog/:id", async (req, res) => {
+router.get("/edit-blog/:id", authMiddleware, async (req, res) => {
   const blog = await Blog.findOne({ _id: req.params.id }).lean();
   res.render("edit-blog", { blog });
 });
 
 // @route  POST /edit-blog/:id
-// @desc   Open a blog page
+// @desc   Edit a blog
 // @access Private
-router.post("/edit-blog/:id", async (req, res) => {
+router.post("/edit-blog/:id", authMiddleware, async (req, res) => {
   const { title, body } = req.body;
   try {
     await Blog.findByIdAndUpdate({ _id: req.params.id }, { title, body });

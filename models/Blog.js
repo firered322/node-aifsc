@@ -10,11 +10,11 @@ const BlogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // // linking it up to a User model
-    // user: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    // },
+    // linking it up to a User model
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users",
+    },
     createdAt: {
         type: Date,
         default: Date.now,

@@ -8,13 +8,13 @@ require("dotenv").config();
 const User = require("../models/User");
 
 // @route  POST /auth/login
-// @desc   Login user
+// @desc   Login user and get auth token
 // @access Public
 router.post(
   "/login",
   [
     check("email", "Enter your registered Email id").isEmail(),
-    check("password", "Password is required").exists(),
+    check("password", "Enter your password").exists(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
