@@ -115,4 +115,11 @@ router.post("/edit-blog/:id", authMiddleware, async (req, res) => {
   }
 });
 
+// @route  GET /members
+// @desc   Open the members page
+// @access Public
+router.get("/members", (req, res) => {
+  res.render("members");
+});
+
 module.exports = router;

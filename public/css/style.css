@@ -239,3 +239,10 @@ button {
     margin: 0;
   }
 }
+
+.members-table-container {
+  margin: 0 5%;
+}
+.members-table-container td {
+  font-size: 1.2rem;
+}
