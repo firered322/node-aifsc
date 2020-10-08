@@ -77,6 +77,10 @@ h2 {
   color: #f56565;
 }
 
+#staff-card {
+  width: 18rem;
+}
+
 .form button {
   cursor: pointer;
   background-color: #8bd3dd;
@@ -159,9 +163,8 @@ button {
 }
 @media only screen and (max-width: 500px) {
   .aifsc-logo {
-    width: 50px;
+    width: 120px;
   }
-
 }
 
 @media only screen and (max-width: 900px) {
@@ -243,6 +246,17 @@ button {
   }
   .add-hr {
     margin: 0;
+  }
+  .carousel-card-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #staff-card {
+    width: 80%;
+    font-size: 1rem;
+    margin: 1rem 0;
   }
 }
 
