@@ -161,9 +161,9 @@ button {
     width: 40%;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .aifsc-logo {
-    width: 120px;
+    width: 120px !important;
   }
 }
 
