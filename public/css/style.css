@@ -148,7 +148,7 @@ button {
   justify-content: left;
 }
 
-.aifsc-logo {
+#aifsc-logo {
   width: 150px;
 }
 
@@ -162,7 +162,7 @@ button {
   }
 }
 @media only screen and (max-width: 700px) {
-  .aifsc-logo {
+  #aifsc-logo {
     width: 120px !important;
   }
 }
@@ -181,7 +181,7 @@ button {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  .aifsc-logo {
+  #aifsc-logo {
     width: 150px;
   }
   .brand-text {
@@ -222,7 +222,7 @@ button {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  .aifsc-logo {
+  #aifsc-logo {
     width: 100px;
   }
   .brand-text {
