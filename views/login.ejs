@@ -1,4 +1,14 @@
-<%- include('partials/head.ejs') %> <%- include('partials/header.ejs') %>
+<%- include('partials/head.ejs') %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180351930-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-180351930-1');
+</script>
+<%- include('partials/header.ejs') %>
 <div data-aos="fade-up" data-aos-duration="1000">
   <div class="form-holder">
     <div class="form-container">
