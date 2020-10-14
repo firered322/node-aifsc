@@ -9,10 +9,10 @@
   gtag('config', 'UA-180351930-1');
 </script>
 <%- include('partials/header.ejs') %>
-<div class="container my-5 text-center">
-    <h1><%= blog.title %> </h1>
-    <p class="lead"><%= blog.createdAt %></p>
+<div class="container my-5">
+    <h1 class="text-center"><%= blog.title %> </h1>
+    <p class="lead text-center"><%= blog.createdAt %></p>
     <hr>
-    <p class="text-center"><%- blog.body %> </p>
+    <p style="text-align: start;"><%- blog.body %> </p>
 </div>
 <%- include('partials/footer.ejs') %>
