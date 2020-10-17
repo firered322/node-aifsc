@@ -12,8 +12,13 @@ body {
   color: #333;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
+.custom-brand {
+  font-size: 1.4rem;
+}
+
+.custom-brand:hover {
+  color: #fa4b4b;
+  text-decoration: none;
 }
 
 .brand-text {
@@ -23,8 +28,8 @@ body {
 }
 
 .location-text {
-  color: #434190;
-  font-size: 1.1rem;
+  color: #000;
+  font-size: 0.9rem;
 }
 
 .admin-carousel-container {
@@ -32,9 +37,20 @@ body {
   width: 80%;
 }
 
+@media only screen and (min-width: 1568px) {
+  .admin-carousel-container {
+    margin: auto;
+    width: 80%;
+  }
+  #adminCarousel .carousel-card-holder .staff-card {
+    width: 50%;
+  }
+}
+
 #staff-card {
-  width: 300px;
+  width: 50%;
   padding: 50px 20px;
+  margin: 0 2rem;
   border-radius: 20px;
 }
 
@@ -88,9 +104,6 @@ h2 {
   color: #f56565;
 }
 
-#staff-card {
-  width: 18rem;
-}
 
 .form button {
   cursor: pointer;
@@ -188,14 +201,14 @@ button {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
   #aifsc-logo {
-    width: 150px;
+    width: 100px;
   }
   .brand-text {
     font-size: 1.5rem;
     text-align: center;
   }
   .brand-info-text {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     text-align: center;
   }
   .logo-container {
@@ -236,7 +249,7 @@ button {
     text-align: center;
   }
   .brand-info-text {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     text-align: center;
   }
   .logo-container {
