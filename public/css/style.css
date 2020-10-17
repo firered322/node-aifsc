@@ -27,6 +27,17 @@ body {
   font-size: 1.5rem;
 }
 
+.admin-carousel-container {
+  margin: auto;
+  width: 80%;
+}
+
+#staff-card {
+  width: 300px;
+  padding: 50px 20px;
+  border-radius: 20px;
+}
+
 .jumbotron {
   padding: 5rem 1rem 1rem 1rem;
   margin-bottom: 0.5rem;
