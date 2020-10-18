@@ -25,14 +25,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Anil Kumar</td>
-          <td>Secretary General</td>
-          <td>anilmsingh4@gmail.com</td>
-          <td>9987086503</td>
-          <td>2/6/1994</td>
-        </tr>
+        <% members.forEach((member,id) => { %>
+          <tr>
+            <th scope="row"><%= id+1 %></th>
+            <td><%= member.name %></td>
+            <td><%= member.designation %></td>
+            <td><%= member.email %></td>
+            <td><%= member.phone %></td>
+            <td><%= member.dateOfJoining %></td>
+          </tr>
+          <% }) %>
       </tbody>
     </table>
   </div>

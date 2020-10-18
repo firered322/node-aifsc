@@ -10,7 +10,25 @@
 </script>
 <%- include('partials/header.ejs') %>
 <div data-aos="fade-up" data-aos-duration="1000">
-  <div class="form-holder">
+  <form action="/auth/login" method="POST">
+    <div class="form-holder">
+      <div class="form-container">
+        <div class="form">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" name="email" required/>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password" required/>
+          </div>
+          <button type="submit">Submit</button> 
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- <div class="form-holder">
     <div class="form-container">
       <div class="form">
         <h2>Login</h2>
@@ -25,7 +43,7 @@
         <button type="submit" onclick="handleFormSubmit()">Submit</button> 
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- <div class="container text-center">

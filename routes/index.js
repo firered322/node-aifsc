@@ -3,8 +3,9 @@ const moment = require("moment");
 const multer = require("multer");
 
 const Blog = require("../models/Blog");
+const Member = require("../models/Member");
 const helpers = require("../helper");
-// const authMiddleware = require("../middleware/auth");
+const authMiddleware = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -45,6 +46,13 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   res.render("login");
 });
+
+// // @route  POST /login
+// // @desc   Process login
+// // @access Public
+// router.get("/login", (req, res) => {
+//   res.render("login");
+// });
 
 // @route  GET /blog
 // @desc   Open the add blog page
@@ -118,8 +126,46 @@ router.post("/edit-blog/:id", async (req, res) => {
 // @route  GET /members
 // @desc   Open the members page
 // @access Public
-router.get("/members", (req, res) => {
-  res.render("members");
+router.get("/members", async(req, res) => {
+  try {
+    const members = await Member.find({});
+    res.render("members", { members });
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+// @route  GET /add-member
+// @desc   Add a new member form
+// @access Private
+router.get("/add-member", (req, res) => {
+  res.render("add-member");
+});
+
+// @route  POST /add-member
+// @desc   Handle member creation
+// @access Private
+router.post("/add-member", async (req, res) => {
+  try {
+    const {
+      inputName,
+      inputEmail,
+      inputDesignation,
+      inputPhone,
+      inputDOJ,
+    } = req.body;
+    const memberObj = {
+      name: inputName,
+      designation: inputDesignation,
+      email: inputEmail,
+      phone: inputPhone,
+      dateOfJoining: inputDOJ,
+    };
+    await Member.create(memberObj);
+    res.redirect("/members");
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 module.exports = router;

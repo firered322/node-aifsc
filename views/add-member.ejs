@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs') %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180351930-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-180351930-1');
+</script>
+<%- include('partials/header.ejs') %>
+<div data-aos="fade-up" data-aos-duration="1000">
+  <div class="form-holder">
+    <div class="form-container">
+      <form class="form" method="POST" action="/add-member">
+        <h2>Add Staff</h2>
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <input type="text" class="form-control" id="inputName" name="inputName" required/>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" name="inputEmail" required/>
+        </div>
+        <div class="form-group">
+          <label for="inputDesignation">Designation</label>
+          <input type="text" class="form-control" id="inputDesignation" name="inputDesignation" required/>
+        </div>
+        <div class="form-group">
+          <label for="inputPhone">Phone</label>
+          <input type="text" class="form-control" id="inputPhone" name="inputPhone" required/>
+        </div>
+        <div class="form-group">
+          <label for="inputDOJ">Date Of Joining</label>
+          <input type="date" class="form-control" id="inputDOJ" name="inputDOJ" required/>
+        </div>
+        <button type="submit">Submit</button> 
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>

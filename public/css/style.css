@@ -184,6 +184,18 @@ button {
   #aifsc-logo {
     display: none;
   }
+  #staff-card {
+    width: 50%;
+    padding: 20px 5px;
+    margin: 0 2rem;
+    border-radius: 20px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 900px) {

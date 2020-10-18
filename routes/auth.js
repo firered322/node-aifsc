@@ -47,7 +47,7 @@ router.post(
       // jwt auth
       const payload = {
         user: {
-          id: user.id,
+          id: user._id,
         },
       };
 
