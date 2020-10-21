@@ -8,7 +8,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ececec;
-  font-family: "Rye", cursive;
+  /* font-family: "Rye", cursive; */
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   color: #333;
 }
 
@@ -49,9 +51,17 @@ body {
 
 #staff-card {
   width: 50%;
-  padding: 50px 20px;
+  padding: 2.5rem 1.2rem;
   margin: 0 2rem;
   border-radius: 20px;
+}
+
+#staff-card h5 {
+  font-size: 1.6rem;
+}
+
+#memberTable td,th {
+  font-size: 1.2rem;
 }
 
 .jumbotron {
