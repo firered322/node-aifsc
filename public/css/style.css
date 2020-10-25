@@ -99,6 +99,14 @@ th {
   text-align: center;
 }
 
+nav .custom-brand {
+  color: white;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: white;
+}
+
 .card-body {
   padding: 1.25rem 0.75rem;
 }
@@ -155,7 +163,7 @@ button {
 }
 
 .blog-card {
-  min-height: 20rem;
+  min-height: 24rem;
   border-radius: 20px;
   width: 30%;
   margin: 30px 15px;
@@ -219,6 +227,12 @@ button {
   }
 }
 
+@media only screen and (min-width: 1458px) {
+  .blog-title-holder .blog-title {
+    font-size: 1.4rem;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .admin-carousel-container {
     margin: auto;
@@ -249,7 +263,11 @@ button {
     flex-flow: wrap;
     justify-content: space-evenly;
   }
+  .blog-title-holder .blog-title {
+    font-size: 1.2rem;
+  }
   .blog-card {
+    min-height: 25rem;
     border-radius: 20px;
     width: 80%;
     margin: 30px 15px;
@@ -300,19 +318,17 @@ button {
     width: 100px;
   }
   .brand-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
   }
   .brand-info-text {
-    font-size: 1rem;
+    font-size: 1.25rem;
     text-align: center;
   }
   .logo-container {
     margin-bottom: 1rem;
   }
   .jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 0px;
     background-color: #e9ecef;
     border-radius: 0.3rem;
   }
