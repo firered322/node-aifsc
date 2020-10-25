@@ -8,8 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ececec;
-  /* font-family: "Rye", cursive; */
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   color: #333;
 }
@@ -19,7 +18,6 @@ body {
 }
 
 .custom-brand:hover {
-  color: #fa4b4b;
   text-decoration: none;
 }
 
@@ -40,16 +38,6 @@ body {
   width: 80%;
 }
 
-@media only screen and (min-width: 1568px) {
-  .admin-carousel-container {
-    margin: auto;
-    width: 80%;
-  }
-  #adminCarousel .carousel-card-holder .staff-card {
-    width: 50%;
-  }
-}
-
 #staff-card {
   width: 50%;
   padding: 2.5rem 1.2rem;
@@ -61,7 +49,8 @@ body {
   font-size: 1.6rem;
 }
 
-#memberTable td,th {
+#memberTable td,
+th {
   font-size: 1.2rem;
 }
 
@@ -76,9 +65,21 @@ body {
   margin: 2rem 0;
 }
 
+.blog-title-holder .blog-title {
+  font-size: 1.2rem;
+}
+
+.poks-row {
+  display: flex;
+}
+
 .carousel-card-holder {
   display: flex;
   justify-content: space-around;
+}
+
+.card-name {
+  color: #eeb109;
 }
 
 .logo-container {
@@ -93,6 +94,19 @@ body {
   min-height: 70vh;
   margin: 0;
 }
+
+.nav-item {
+  text-align: center;
+}
+
+.card-body {
+  padding: 1.25rem 0.75rem;
+}
+
+.card-designation {
+  color: #f85a40;
+}
+
 .form-container {
   background-color: white;
   border-radius: 5px;
@@ -114,7 +128,6 @@ h2 {
   text-align: center;
   color: #f56565;
 }
-
 
 .form button {
   cursor: pointer;
@@ -142,12 +155,17 @@ button {
 }
 
 .blog-card {
-  min-height: 25rem;
+  min-height: 20rem;
   border-radius: 20px;
   width: 30%;
   margin: 30px 15px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
 }
 
 .blog-card button:hover {
@@ -188,15 +206,30 @@ button {
 }
 
 .aifsc-card-logo {
-  width: 50px;
+  width: 70px;
+}
+
+@media only screen and (min-width: 1568px) {
+  .admin-carousel-container {
+    margin: auto;
+    width: 80%;
+  }
+  #adminCarousel .carousel-card-holder .staff-card {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
+  .admin-carousel-container {
+    margin: auto;
+    width: 100%;
+  }
   #aifsc-logo {
-    display: none;
+    text-align: center;
+    margin: auto;
   }
   #staff-card {
-    width: 50%;
+    width: 100%;
     padding: 20px 5px;
     margin: 0 2rem;
     border-radius: 20px;
@@ -209,7 +242,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 990px) {
   .blog-container {
     margin: 0 5%;
     display: flex;
@@ -223,19 +256,15 @@ button {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  #aifsc-logo {
-    width: 100px;
-  }
   .brand-text {
     font-size: 1.5rem;
     text-align: center;
   }
   .brand-info-text {
-    font-size: 1.0rem;
+    font-size: 1rem;
     text-align: center;
   }
   .logo-container {
-    flex-direction: row !important;
     justify-content: center;
     margin-bottom: 1rem;
   }
@@ -248,9 +277,12 @@ button {
   .add-hr {
     margin: 0;
   }
+  .nav-item {
+    text-align: start;
+  }
 }
 
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1280px) {
   .blog-container {
     margin: 0 5%;
     display: flex;
@@ -272,12 +304,10 @@ button {
     text-align: center;
   }
   .brand-info-text {
-    font-size: 1.0rem;
+    font-size: 1rem;
     text-align: center;
   }
   .logo-container {
-    flex-direction: column;
-    justify-content: center;
     margin-bottom: 1rem;
   }
   .jumbotron {
